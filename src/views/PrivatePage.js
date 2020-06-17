@@ -9,8 +9,9 @@ const PrivatePage = props => {
     <div>
       <p>This page is private.</p>
       <p>
-        The authenticated user is named {props.user.name} and is {props.user.age} years old
+        The authenticated user is named {props.user.name} and is {props.user.age} years old.
       </p>
+      <button onClick={() => props.history.goBack()}>Go back</button>
     </div>
   );
 };

@@ -19,6 +19,7 @@ class SecondPage extends Component {
   }
 
   componentDidUpdate(previousProps, previousState) {
+    console.log('location: ', previousProps.location);
     const userChanged = previousProps.match.params.name !== this.props.match.params.name;
     if (userChanged) {
       this.fetchData();
@@ -41,8 +42,11 @@ class SecondPage extends Component {
       (user && (
         <div>
           <p>
-            This is the second page for user with name {user.name}, age {user.age} and location {user.location}
+            This is the second page for user with name {user.name}, age {user.age} and location {user.location}.
           </p>
+          <div>
+            <button onClick={() => this.props.history.push('/')}>Go to home page</button>
+          </div>
         </div>
       )) ||
       ''
